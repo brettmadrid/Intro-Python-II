@@ -25,7 +25,6 @@ earlier adventurers. The only exit is to the south."""),
 
 
 # Link rooms together
-
 room['outside'].n_to = room['foyer']
 room['foyer'].s_to = room['outside']
 room['foyer'].n_to = room['overlook']
@@ -40,9 +39,19 @@ room['treasure'].s_to = room['narrow']
 #
 
 # Make a new player object that is currently in the 'outside' room.
+player = Player(input("Ready Player One! Enter your name please: "), room['outside'])
 
+action = input("Move North(n), South(s), East(e), or West(w) \nItem Action(i) \nQuit Game(q)\n\n")
+player.action_input(action)
 # Write a loop that:
-#
+while True:
+    if action == 'q':
+        break
+    elif player.current_room is not None:
+        
+    else:
+        print("This room does not exist. Please try again.")
+
 # * Prints the current room name
 # * Prints the current description (the textwrap module might be useful here).
 # * Waits for user input and decides what to do.
