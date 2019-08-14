@@ -48,7 +48,10 @@ while True:
     if action == 'q':
         break
     elif player.current_room is not None:
-        
+        player.display_room() 
+        action = input("Move North(n), South(s), East(e), or West(w) \nItem Action(i) \nQuit Game(q)\n\n")
+        player.action_input(action)
+        continue
     else:
         print("This room does not exist. Please try again.")
 

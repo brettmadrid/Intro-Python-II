@@ -14,7 +14,6 @@ class Player:
     if decision == 'n':
       if self.current_room.n_to is not None:
           self.current_room = self.current_room.n_to
-          print('Your are in the foyer')
     elif decision == 's':
       if self.current_room.s_to is not None:
         self.current_room = self.current_room.s_to
@@ -27,3 +26,5 @@ class Player:
     else:
       print("Thanks for playing")
 
+  def display_room(self):
+    print(f'Current Room: {self.current_room.name}\n \n{self.current_room.description}\n\n')
