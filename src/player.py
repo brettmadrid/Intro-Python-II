@@ -36,13 +36,15 @@ class Player:
         self.look_around()
     elif decision == 'i':
         self.take_inventory()
+    elif decision == 'r':
+      self.remove_item()
     elif decision == 'q':
       pass
     else:
       print("Sorry, that is not a valid choice!")
 
   def describe_room(self):
-    print(f'\n\nYour location: {self.current_room.name}\n \n{self.current_room.description}\n\n')
+    print(f'\n\nYour location: {self.current_room.name}\n \n{self.current_room.description}\n')
 
   def look_around(self):
     if self.current_room.items:
@@ -61,5 +63,20 @@ class Player:
       print('You have:\n')
       for i in self.inventory:
         print(i.name)
+    else:
+      print('You currently have no items!')
+
+  def remove_item(self):
+    if self.inventory:
+      remove = input("\n\nWhich item would you like to remove? ")
+
+      for i in self.inventory:
+        print(i)
+        # if item.name == remove:
+        #   del self.inventory[i]
+        #   print('Item successfully removed\n')
+        #   self.take_inventory()
+    else:
+      print('You currently have no items!')
 
     
