@@ -70,5 +70,5 @@ while True:
         player.action_input(action)
         continue
     else:
-        print("This room does not exist. Please try again.")
+        print("Room does not exist. Please try again.")
 

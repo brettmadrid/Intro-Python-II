@@ -60,7 +60,7 @@ class Player:
 
   def take_inventory(self):
     if self.inventory:
-      print('You have:\n')
+      print('You currently have:\n')
       for i in self.inventory:
         print(i.name)
     else:
@@ -68,14 +68,17 @@ class Player:
 
   def remove_item(self):
     if self.inventory:
-      remove = input("\n\nWhich item would you like to remove? ")
+      print('\nYou currently have in your inventory:\n')
+      for i, item in enumerate(self.inventory):
+        print(f"{item.name}")
 
-      for i in self.inventory:
-        print(i)
-        # if item.name == remove:
-        #   del self.inventory[i]
-        #   print('Item successfully removed\n')
-        #   self.take_inventory()
+      drop_item = input("Would you like to drop any items from your inventory?(input item name to drop)")
+
+      for i, item in enumerate(self.inventory):
+        if item.name == drop_item:
+            del self.inventory[i]
+            print('Item successfully removed\n')
+            self.take_inventory()
     else:
       print('You currently have no items!')
 
