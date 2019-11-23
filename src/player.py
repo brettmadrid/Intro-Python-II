@@ -34,3 +34,23 @@ class Player:
                 self.current_room = self.current_room.w_to
             else:
                 print(bad_choice)
+
+        elif decision == 'l':
+            self.look_around()
+
+        elif decision == 'q':
+            pass
+
+        else:
+            print("Sorry, that is not a valid option")
+
+    def describe_room(self):
+        print(f'\n\nYour location: {self.current_room.name}\n \n{self.current_room.description}\n')
+
+    def look_around(self):
+        pass
+
+
+
+
+
